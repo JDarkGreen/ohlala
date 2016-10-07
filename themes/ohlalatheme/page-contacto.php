@@ -91,6 +91,9 @@ include( locate_template('partials/banner-top-page.php') );
 					<!-- Informacion Dirección -->
 					<?= isset($options['theme_address_text']) ? apply_filters('the_content' , $options['theme_address_text'] ) : ''; ?>
 					
+					<!-- Información de Página -->
+					<?= apply_filters('the_content' , $post->post_content ); ?>
+					
 					<!-- Email -->
 					<p class="featured">
 						<?= isset($options['theme_email_text']) ? $options['theme_email_text'] : ''; ?>

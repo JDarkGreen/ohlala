@@ -28,7 +28,7 @@ include( locate_template('partials/banner-top-page.php') );
 
 ?>
 
-<div class="sectionContainerService">
+<!--div class="sectionContainerService"-->
 	
 	<main class="mainContainerService containerRelative">
 		
@@ -59,7 +59,7 @@ include( locate_template('partials/banner-top-page.php') );
 
 	</main> <!-- /.mainContainerService -->
 	
-</div> <!-- /.sectionContainerService -->
+<!--/div> <!- /.sectionContainerService -->
 
 
 <?php  

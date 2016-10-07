@@ -65,6 +65,22 @@ $options = get_option("theme_settings");
 
 							}
 						?>
+					</li>					
+
+					<li>
+						<!-- Icon -->
+						<i class="fa fa-mobile" aria-hidden="true"></i>
+
+						<?php  
+							for ( $i=1 ;  $i <= 5 ;  $i++) 
+							{ 
+								$cellphone = isset($options['theme_cel_text_'.$i]) ? $options['theme_cel_text_'.$i] : '';
+
+								echo $i !== 1 && !empty($cellphone) ? ' - ' : '';
+								echo $cellphone;
+
+							}
+						?>
 					</li>
 
 					<!-- Email -->
