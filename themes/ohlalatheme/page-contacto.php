@@ -150,7 +150,7 @@ include( locate_template('partials/banner-top-page.php') );
 			<!-- Mensaje -->
 			<div class="pageContacto__form__group">
 				<label for="input_message" class="sr-only"> Mensaje</label>
-				<textarea name="input_message" id="input_message" placeholder="<?php _e( 'Mensaje:', LANG ); ?>" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Necesitas más de 20 caracteres" data-parsley-validation-threshold="10"></textarea>
+				<textarea name="input_message" id="input_message" placeholder="<?php _e( 'Mensaje:', LANG ); ?>" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="400" data-parsley-minlength-message="Necesitas más de 20 caracteres" data-parsley-validation-threshold="10"></textarea>
 			</div> <!-- /.pageContacto__form__group -->
 
 			<!-- Espacio --> <br />
