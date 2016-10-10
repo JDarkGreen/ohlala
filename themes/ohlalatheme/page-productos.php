@@ -27,32 +27,34 @@ $options = get_option("theme_settings");
 include( locate_template('partials/banner-top-page.php') );
 
 /*
+ * Link a catálogo
+ */
+$page_catalogo = get_page_by_title('catálogos');
+$page_catalogo_link = !empty($page_catalogo) ? get_permalink($page_catalogo->ID) : '#';
+
+
+/*
  * Variables a utilizar
  */ 
 
 //Items por página
 $posts_per_page = 16; 
 //Variable de paginación
-$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 //Argumentos
 $args = array(
-	'order'          =>'ASC',
-	'orderby'        =>'menu_order',
 	'paged'          => $paged,
-	'post_status'    =>'publish',
-	'post_type'      =>'theme-products',
-	'posts_per_page' => $posts_per_page,
+	'post_status'    => 'publish',
+	'post_type'      => 'theme-products',
+	'posts_per_page' =>  $posts_per_page,
+	'order'          => 'DESC',
+	'orderby'        => 'menu_order date',
 );
 
 //The query
 $the_query = new WP_Query( $args );
 
-/*
- * Link a catálogo
- */
-$page_catalogo = get_page_by_title('catálogos');
-$page_catalogo_link = !empty($page_catalogo) ? get_permalink($page_catalogo->ID) : '#';
 
 ?>
 

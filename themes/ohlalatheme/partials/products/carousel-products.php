@@ -30,7 +30,7 @@ $link_page_products = !empty($page_products) ? get_permalink($page_products->ID)
 
 			$args = array(
 				'order'          => 'DESC',
-				'orderby'        => 'date',
+				'orderby'        => 'menu_order',
 				'post_status'    => 'publish',
 				'post_type'      => 'theme-products',
 				'posts_per_page' => $limit_products,
