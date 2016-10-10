@@ -47,43 +47,35 @@ $link_page_products = !empty($page_products) ? get_permalink($page_products->ID)
 				
 				<!-- Articulo PREVIEW  -->
 				<article class="itemProductPreview">
-					
+
 					<!-- Imágen -->
-					<figure class="featured-image">
-						<?php if( has_post_thumbnail($last_product->ID) ) : ?>
-							
-							<?= get_the_post_thumbnail( $last_product->ID , 'full' , array('class'=>'img-fluid d-block m-x-auto') ); ?>
+					<?php  
+						$url_image = has_post_thumbnail($last_product->ID) ? wp_get_attachment_url( get_post_thumbnail_id($last_product->ID) ) : 'https://unsplash.it/215/255';	
+					?>
 
-						<?php else: ?>
-							
-							<img src="https://unsplash.it/215/255" alt="<?= $last_product->post_name; ?>" class="img-fluid d-block m-x-auto" />
+					<a href="<?= $url_image; ?>" class="gallery-fancybox d-block">
 
-						<?php endif; ?>
+						<figure class="featured-image" style="background-image : url(<?= $url_image ?>)">
 
-						<!-- Calificación de Estrellas -->
-						<div class="qualify-stars">
-							
-							<?php  
-								$mb_stars = get_post_meta( $last_product->ID , 'product_qualify' , true );
-								$mb_stars = !empty($mb_stars) ? intval($mb_stars) : 0;
+							<!-- Calificación de Estrellas -->
+							<div class="qualify-stars">
+								
+								<?php  
+									$mb_stars = get_post_meta( $last_product->ID , 'product_qualify' , true );
+									$mb_stars = !empty($mb_stars) ? intval($mb_stars) : 0;
 
-								for( $i = 0 ; $i < $mb_stars ; $i++ ){
-							?>
-								<!-- Icon -->
-								<i class="fa fa-star" aria-hidden="true"></i>
-					
-							<?php } ?>
-
-						</div> <!-- /.qualify-stars -->
+									for( $i = 0 ; $i < $mb_stars ; $i++ ){
+								?>
+									<!-- Icon -->
+									<i class="fa fa-star" aria-hidden="true"></i>
 						
-						<!-- Link to producto -->
-						<!--div class="content-detail">
+								<?php } ?>
+
+							</div> <!-- /.qualify-stars -->
 							
-							<a href="<?= get_permalink( $last_product->ID ); ?>" class="btn-to-link"> <?= __( 'Detalle' , LANG ); ?></a>
+						</figure> <!-- /.featured-image -->
 
-						</div> <! /.content-detail -->
-
-					</figure> <!-- /.featured-image -->
+					</a> <!-- /.d-block -->
 
 					<!-- Content Text -->
 					<div class="content-text text-xs-center">
@@ -98,7 +90,7 @@ $link_page_products = !empty($page_products) ? get_permalink($page_products->ID)
 
 						<!-- Limpiar floats --> <div class="clearfix"></div>
 
-					</div> <!-- /.content-text -->
+					</div> <!-- /.content-text -->					
 
 				</article> <!-- /.itemProductPreview -->
 

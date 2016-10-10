@@ -65,36 +65,36 @@ $the_query = new WP_Query( $args );
 				
 				<!-- Item preview or article product -->
 				<article class="itemProductPreview">
-					
+
 					<!-- Imágen -->
-					<figure class="featured-image">
-						<?php if( has_post_thumbnail( get_the_ID() ) ) : ?>
-							
-							<?= get_the_post_thumbnail( get_the_ID() , 'full' , array('class'=>'img-fluid d-block m-x-auto') ); ?>
+					<?php  
+						$url_image = has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : 'https://unsplash.it/215/255';	
+					?>
 
-						<?php else: ?>
-							
-							<img src="https://unsplash.it/215/255" alt="<?= $last_product->post_name; ?>" class="img-fluid d-block m-x-auto" />
+					<a href="<?= $url_image; ?>" class="gallery-fancybox d-block">
 
-						<?php endif; ?>
+						<!-- Imágen -->
+						<figure class="featured-image" style="background-image : url(<?= $url_image ?>)">
 
-						<!-- Calificación de Estrellas -->
-						<div class="qualify-stars">
-							
-							<?php  
-								$mb_stars = get_post_meta( get_the_ID() , 'product_qualify' , true );
-								$mb_stars = !empty($mb_stars) ? intval($mb_stars) : 0;
+							<!-- Calificación de Estrellas -->
+							<div class="qualify-stars">
+								
+								<?php  
+									$mb_stars = get_post_meta( get_the_ID() , 'product_qualify' , true );
+									$mb_stars = !empty($mb_stars) ? intval($mb_stars) : 0;
 
-								for( $i = 0 ; $i < $mb_stars ; $i++ ){
-							?>
-								<!-- Icon -->
-								<i class="fa fa-star" aria-hidden="true"></i>
-					
-							<?php } ?>
-
-						</div> <!-- /.qualify-stars -->
+									for( $i = 0 ; $i < $mb_stars ; $i++ ){
+								?>
+									<!-- Icon -->
+									<i class="fa fa-star" aria-hidden="true"></i>
 						
-					</figure> <!-- /.featured-image -->
+								<?php } ?>
+
+							</div> <!-- /.qualify-stars -->
+							
+						</figure> <!-- /.featured-image -->
+
+					</a>  <!-- /.gallery fancybox -->
 
 					<!-- Content Text -->
 					<div class="content-text text-xs-center">

@@ -14,26 +14,26 @@
 	box-sizing : border-box
 	display    : inline-block 
 	font-family: "Montserrat" , sans-serif
+	height     : 370px
 	margin     : 0 auto 15px
-	min-height : 370px
 	overflow   : hidden
 	width      : 100%
 
 	//Imágen
 	figure.featured-image
-		margin    : 0 auto 18px
-		max-height: 256px
-		max-width : 260px 
-		overflow  : hidden
-		position  : relative
-		width     : 100%
+		background-repeat: no-repeat
+		background-size  : cover
+		height           : 256px
+		margin           : 0 auto 18px
+		max-width        : 260px
+		overflow         : hidden
+		position         : relative
+		width            : 100%
 		img 
 			+transition( all 900ms ease )
 
 		//:hovered
 		&:hover 
-			img 
-				+scale( 1.15 )
 			.content-detail
 				+opacity( 1 )
 
