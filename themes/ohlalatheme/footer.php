@@ -137,6 +137,8 @@ $options = get_option("theme_settings");
 
 	<?php wp_footer(); ?>
 
+	<script> var url = "<?= THEMEROOT ?>"; </script>
+
 	<!-- Loader -->
 	 <script type="text/javascript">
 	 	var j = jQuery.noConflict();
@@ -147,10 +149,10 @@ $options = get_option("theme_settings");
 			zIndex    : 99999999999999, // Default zIndex
 			spinner   : "spinner5",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
 			bgColor   : "#362017", //Hex, RGB or RGBA colors
+			imagePath : url + "/assets/images/front_logo.png" //If you want can you insert your custom image
    		});
     </script>
 
-	<script> var url = "<?= THEMEROOT ?>"; </script>
 	
 </body>
 </html>

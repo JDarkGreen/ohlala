@@ -32,7 +32,7 @@ $link_catalogo = isset($options['theme_download_catalogo']) && !empty($options['
 	<div class="content-text m-x-auto containerFlex containerAlignContent text-xs-center">
 
 		<!-- Titulo -->
-		<h2 class="text-uppercase"> <?= __("descarga nuestro catálogo navideño" , LANG ); ?></h2>
+		<h2 class="text-uppercase"> <?= __("Descargue nuestros catálogos corporativos" , LANG ); ?></h2>
 		<!-- Boton -->
 		<a href="<?= $page_catalogo_link; ?>" class="btn-show-more text-uppercase"> aquí </a>
 

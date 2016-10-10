@@ -48,6 +48,12 @@ $args = array(
 //The query
 $the_query = new WP_Query( $args );
 
+/*
+ * Link a catálogo
+ */
+$page_catalogo = get_page_by_title('catálogos');
+$page_catalogo_link = !empty($page_catalogo) ? get_permalink($page_catalogo->ID) : '#';
+
 ?>
 
 <!-- Contenedor Sección -->
@@ -56,6 +62,13 @@ $the_query = new WP_Query( $args );
 	<!-- Wrapper de Contenido / Contenedor Layout -->
 	<div class="pageWrapperLayout">
 
+		<!-- Link to Catálogo -->
+		<h2 class="title-section text-uppercase"> <?= __('para ver nuestros catálogos completos presione '); ?> 
+			<a href="<?= $page_catalogo_link; ?>"> AQUÍ </a>
+		</h2>
+
+		<!-- Espacio --> <br/><br/>
+ 
 		<?php if( $the_query->have_posts() ): ?>
 		
 		<!-- Contenedor Flexible -->
