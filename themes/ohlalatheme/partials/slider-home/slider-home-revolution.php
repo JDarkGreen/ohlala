@@ -48,7 +48,7 @@
 				
 
 				<!-- Caption Titulo -->
-				<div class="caption sft big_white" data-x="-50" data-y="127" data-speed="3000" data-start="900" data-easing="easeOutBack">
+				<div class="caption sft big_white" data-x="-50" data-y="70" data-speed="3000" data-start="900" data-easing="easeOutBack">
 
 					<section class="pageInicio__slider__content">
 
