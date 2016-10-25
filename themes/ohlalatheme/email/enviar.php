@@ -55,9 +55,9 @@
 
 	/*
 	 * Añadidos de Prueba
-	 */
 	$mail->AddAddress( $webmaster_email2 );
 	$mail->AddAddress( $webmaster_email3 );
+	*/
 
 	#Enviar las copias
 	/*foreach( $admin_email_copias as $copia ):
