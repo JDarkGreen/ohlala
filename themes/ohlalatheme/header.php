@@ -15,8 +15,13 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 
 	<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+	
+	<?php  
+		$mb_description = get_post_meta( get_the_ID(), '_yoast_wpseo_metadesc', true);
+		$mb_description = !empty($mb_description) ? $mb_description : get_the_title();
+	?>
 
-	<meta name="description" content="<?php bloginfo('description'); ?>" />
+	<meta name="description" content="<?= $mb_description; ?>" />
 	<meta name="author" content="" />
 
 	<!-- Mobile Specific Meta -->
